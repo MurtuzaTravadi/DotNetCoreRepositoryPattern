@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using DotNetCoreRepositoryPattern.Models.Infrastructure.Data;
+using DotNetCoreRepositoryPattern.Repository.Abstract;
+using DotNetCoreRepositoryPattern.Repository.Concrete;
 
 namespace DotNetCoreRepositoryPattern
 {
@@ -43,7 +45,7 @@ namespace DotNetCoreRepositoryPattern
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddEntityFramework(Configuration.GetConnectionString("DefaultConnection"));
-    
+            services.AddTransient<IUserRepository, UserRepository>();
             // Add framework services.
             services.AddMvc();
         }

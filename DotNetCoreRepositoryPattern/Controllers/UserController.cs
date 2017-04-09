@@ -1,9 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DotNetCoreRepositoryPattern.Repository.Abstract;
+using System.Collections.Generic;
+using DotNetCoreRepositoryPattern.Models.Domain.Model;
 
 namespace DotNetCoreRepositoryPattern.Controllers
 {
@@ -18,6 +16,7 @@ namespace DotNetCoreRepositoryPattern.Controllers
 
         public IActionResult Index()
         {
+            //IEnumerable<User> user =as IEnumerable<User>;
             return View(userRepository.GetAll());
         }
         

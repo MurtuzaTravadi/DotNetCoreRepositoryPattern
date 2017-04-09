@@ -28,5 +28,8 @@
     <ProjectReference Include="..\DotNetCoreRepositoryPattern.Models\DotNetCoreRepositoryPattern.Models.csproj" />
     <ProjectReference Include="..\DotNetCoreRepositoryPattern.Repository\DotNetCoreRepositoryPattern.Repository.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\User\" />
+  </ItemGroup>
 
 </Project>

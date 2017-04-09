@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DotNetCoreRepositoryPattern.Models.Domain.Model.User>
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading panel-head">Students</div>
+    <div class="panel-body">
+        <div class="btn-group">
+            <a id="createEditStudentModal" data-toggle="modal" asp-action="AddEditStudent" data-target="#modal-action-student" class="btn btn-primary">
+                <i class="glyphicon glyphicon-plus"></i>  Add Student
+            </a>
+        </div>
+        <div class="top-buffer"></div>
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>IsActive</th>
+                    <th>Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Number)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
+                        <td>
+                            <a id="editStudentModal" data-toggle="modal" asp-action="AddEditStudent" asp-route-id="@item.Id" data-target="#modal-action-student"
+                               class="btn btn-info">
+                                <i class="glyphicon glyphicon-pencil"></i>  Edit
+                            </a>
+                            <a id="deleteStudentModal" data-toggle="modal" asp-action="DeleteStudent" asp-route-id="@item.Id" data-target="#modal-action-student" class="btn btn-danger">
+                                <i class="glyphicon glyphicon-trash"></i>  Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

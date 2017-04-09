@@ -25,7 +25,7 @@ namespace DotNetCoreRepositoryPattern.Models.Domain.Model
         public int CreatedBy { get; set; }
         public DateTime ModifiedDate{ get; set; }
         public int ModifiedBy { get; set; }
-
+                
         public ICollection<UserSubjectMapping> UserSubjectMappings { get; set; }
 
     }
