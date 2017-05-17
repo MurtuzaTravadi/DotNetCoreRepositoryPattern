@@ -43,7 +43,7 @@ namespace DotNetCoreRepositoryPattern
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddEntityFramework(Configuration.GetConnectionString("DefaultConnection"));
-    
+            services.AddScoped<AirlineContext, AirlineContext>();
             // Add framework services.
             services.AddMvc();
         }
